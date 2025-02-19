@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "864312318075",
+    "project_id": "quickfixx-mc-lab",
+    "storage_bucket": "quickfixx-mc-lab.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:864312318075:android:93d04e42d2fd6be055eade",
+        "android_client_info": {
+          "package_name": "com.example.quickfixx_app_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "864312318075-g7elis4hat0dfcm7g1749mubpg89bids.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAy_rIpp_GJqUEHmh8EaYhG2gjFyW0Br2o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "864312318075-g7elis4hat0dfcm7g1749mubpg89bids.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

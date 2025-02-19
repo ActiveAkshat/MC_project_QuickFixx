@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quickfixx_app_flutter/screens/map_screen.dart';
 
 class ServiceListScreen extends StatelessWidget {
   final Map<String, dynamic> service;
@@ -9,16 +10,40 @@ class ServiceListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> providers = [
       {
-        "name": "Rajesh",
+        "name": "Rajesh Kumar",
         "baseFare": "₹200",
         "likes": "400",
         "experience": "2 years",
       },
       {
-        "name": "Kamlesh",
-        "baseFare": "₹200",
-        "likes": "400",
-        "experience": "2 years",
+        "name": "Kamlesh Singh",
+        "baseFare": "₹250",
+        "likes": "600",
+        "experience": "3 years",
+      },
+      {
+        "name": "Amit Sharma",
+        "baseFare": "₹300",
+        "likes": "550",
+        "experience": "4 years",
+      },
+      {
+        "name": "Suresh Verma",
+        "baseFare": "₹180",
+        "likes": "350",
+        "experience": "2.5 years",
+      },
+      {
+        "name": "Vikas Yadav",
+        "baseFare": "₹220",
+        "likes": "500",
+        "experience": "3.5 years",
+      },
+      {
+        "name": "Manoj Tiwari",
+        "baseFare": "₹270",
+        "likes": "450",
+        "experience": "5 years",
       },
     ];
 
@@ -65,15 +90,30 @@ class ServiceListScreen extends StatelessWidget {
                           Text(
                             provider["name"],
                             style: const TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                           const SizedBox(height: 5),
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                               Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MapScreen(),
+                          ),
+                        );
+                            },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.blue[900],
+                              backgroundColor: Colors.redAccent,
                             ),
-                            child: const Text("BOOK"),
+                            child: const Text(
+                              "BOOK",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ),
                           const SizedBox(height: 5),
                           Text("📍 Base Fare: ${provider["baseFare"]}"),

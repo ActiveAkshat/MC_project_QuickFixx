@@ -19,9 +19,7 @@ class ServiceCard extends StatelessWidget {
         );
       },
       child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         elevation: 3,
         child: Padding(
           padding: const EdgeInsets.all(12.0),
@@ -32,8 +30,8 @@ class ServiceCard extends StatelessWidget {
                 child: Image.asset(
                   service["image"],
                   fit: BoxFit.contain,
-                  width: 100,
-                  height: 100,
+                  width: 150,
+                  height: 150,
                 ),
               ),
               const SizedBox(height: 10),
@@ -49,7 +47,8 @@ class ServiceCard extends StatelessWidget {
                 service["cost"],
                 style: const TextStyle(
                   fontSize: 14,
-                  color: Colors.black54,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 65, 64, 64),
                 ),
               ),
               const SizedBox(height: 5),
@@ -58,10 +57,7 @@ class ServiceCard extends StatelessWidget {
                 children: [
                   const Icon(Icons.star, color: Colors.amber, size: 20),
                   const SizedBox(width: 5),
-                  Text(
-                    service["rating"],
-                    style: const TextStyle(fontSize: 14),
-                  ),
+                  Text(service["rating"], style: const TextStyle(fontSize: 14)),
                 ],
               ),
             ],
