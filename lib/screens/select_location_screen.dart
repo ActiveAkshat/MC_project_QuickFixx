@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:quickfixx_app_flutter/screens/tracking_screen.dart';
 import '../services/location_service.dart';
 
 class SelectLocationScreen extends StatefulWidget {
@@ -37,11 +38,13 @@ class _SelectLocationScreenState extends State<SelectLocationScreen> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          GoogleMap(
+  @override
+Widget build(BuildContext context) {
+  return Scaffold(
+    body: Stack(
+      children: [
+        Positioned.fill( // ✅ Ensures the map doesn't cover other widgets
+          child: GoogleMap(
             initialCameraPosition: CameraPosition(
               target: _selectedLocation,
               zoom: 15,
@@ -55,16 +58,19 @@ class _SelectLocationScreenState extends State<SelectLocationScreen> {
             },
             onTap: _onMapTapped,
           ),
-          Positioned(
-            bottom: 20,
-            left: 20,
-            right: 20,
-            child: _buildLocationCard(),
-          ),
-        ],
-      ),
-    );
-  }
+        ),
+        // Ensure the Location Card is Above the Map
+        Positioned(
+          bottom: 20,
+          left: 20,
+          right: 20,
+          child: _buildLocationCard(),
+        ),
+      ],
+    ),
+  );
+}
+
 
   Widget _buildLocationCard() {
     return Card(
@@ -99,7 +105,14 @@ class _SelectLocationScreenState extends State<SelectLocationScreen> {
                 minimumSize: Size(double.infinity, 50),
               ),
               onPressed: () {
-                print("Address saved: $_selectedLocation");
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder:
+                        (context) =>
+                            TrackingScreen(selectedLocation: _selectedLocation),
+                  ),
+                );
               },
               child: Text(
                 "Save Address",
