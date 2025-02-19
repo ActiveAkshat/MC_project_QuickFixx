@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "864312318075",
+    "project_id": "quickfixx-mc-lab",
+    "storage_bucket": "quickfixx-mc-lab.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:864312318075:android:4d1811441d5835d655eade",
+        "android_client_info": {
+          "package_name": "com.mc.quickfixx"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAy_rIpp_GJqUEHmh8EaYhG2gjFyW0Br2o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
