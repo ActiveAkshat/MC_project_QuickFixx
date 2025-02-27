@@ -39,38 +39,38 @@ class _SelectLocationScreenState extends State<SelectLocationScreen> {
 
   @override
   @override
-Widget build(BuildContext context) {
-  return Scaffold(
-    body: Stack(
-      children: [
-        Positioned.fill( // ✅ Ensures the map doesn't cover other widgets
-          child: GoogleMap(
-            initialCameraPosition: CameraPosition(
-              target: _selectedLocation,
-              zoom: 15,
-            ),
-            onMapCreated: (controller) => mapController = controller,
-            markers: {
-              Marker(
-                markerId: MarkerId("selected"),
-                position: _selectedLocation,
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          Positioned.fill(
+            // ✅ Ensures the map doesn't cover other widgets
+            child: GoogleMap(
+              initialCameraPosition: CameraPosition(
+                target: _selectedLocation,
+                zoom: 15,
               ),
-            },
-            onTap: _onMapTapped,
+              onMapCreated: (controller) => mapController = controller,
+              markers: {
+                Marker(
+                  markerId: MarkerId("selected"),
+                  position: _selectedLocation,
+                ),
+              },
+              onTap: _onMapTapped,
+            ),
           ),
-        ),
-        // Ensure the Location Card is Above the Map
-        Positioned(
-          bottom: 20,
-          left: 20,
-          right: 20,
-          child: _buildLocationCard(),
-        ),
-      ],
-    ),
-  );
-}
-
+          // Ensure the Location Card is Above the Map
+          Positioned(
+            bottom: 20,
+            left: 20,
+            right: 20,
+            child: _buildLocationCard(),
+          ),
+        ],
+      ),
+    );
+  }
 
   Widget _buildLocationCard() {
     return Card(
@@ -116,7 +116,7 @@ Widget build(BuildContext context) {
               },
               child: Text(
                 "Save Address",
-                style: TextStyle(color: Colors.white, fontSize: 16),
+                style: TextStyle(color: Colors.black, fontSize: 16),
               ),
             ),
           ],

@@ -27,7 +27,8 @@ class _MapScreenState extends State<MapScreen> {
             ),
             children: [
               TileLayer(
-                urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                urlTemplate:
+                    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 subdomains: ['a', 'b', 'c'],
               ),
               MarkerLayer(
@@ -36,7 +37,11 @@ class _MapScreenState extends State<MapScreen> {
                     point: selectedLocation,
                     width: 50,
                     height: 50,
-                    child: Icon(Icons.location_pin, color: Colors.red, size: 40),
+                    child: Icon(
+                      Icons.location_pin,
+                      color: Colors.red,
+                      size: 40,
+                    ),
                   ),
                 ],
               ),
@@ -56,7 +61,10 @@ class _MapScreenState extends State<MapScreen> {
                   ),
                 );
               },
-              child: Text("Confirm Location"),
+              child: Text(
+                "Confirm Location",
+                style: TextStyle(fontSize: 16, color: Colors.white),
+              ),
             ),
           ),
         ],

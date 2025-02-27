@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quickfixx_app_flutter/screens/map_screen.dart';
+import 'package:quickfixx_app_flutter/screens/profile_screen.dart'; // Import Profile Screen
 
 class ServiceListScreen extends StatelessWidget {
   final Map<String, dynamic> service;
@@ -97,12 +98,12 @@ class ServiceListScreen extends StatelessWidget {
                           const SizedBox(height: 5),
                           ElevatedButton(
                             onPressed: () {
-                               Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => MapScreen(),
-                          ),
-                        );
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => MapScreen(),
+                                ),
+                              );
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.redAccent,
@@ -132,6 +133,16 @@ class ServiceListScreen extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.red,
         selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white70,
+        onTap: (index) {
+          if (index == 2) {
+            // Profile Icon tapped
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ProfileScreen()),
+            );
+          }
+        },
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.history), label: "History"),

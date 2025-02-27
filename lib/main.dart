@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:quickfixx_app_flutter/screens/login_screen.dart';
 import 'screens/home_screen.dart';
+import 'screens/auth.dart';
 
 void main() {
   runApp(const MyApp());
